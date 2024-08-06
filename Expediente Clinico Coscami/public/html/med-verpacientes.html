@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Pacientes</title>
+    <link rel="shortcut icon" href="/img/logo2.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="/css/med-verpaciente.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+   
+
+    </style>
+</head>
+<body>
+    <div class="navbar-container">
+        <div class="logo">
+            <a href="#">
+                <img src="/img/logo.png" alt="Centro Medico Coscami">
+            </a>
+        </div>
+        <div id="nav">
+            <a href="medico-dashboard.html"><i class="nav-icon fas fa-home"></i> Home</a>
+            <a href="med-verpacientes.html"><i class="nav-icon fas fa-list-alt"></i> Ver pacientes</a>
+            <button type="button" id="logoutButton"><i class="nav-icon fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+        </div>
+    </div>
+    <div class="container my-4">
+        <div class="input-group mb-3">
+            <input type="text" id="searchInput" class="form-control" placeholder="Buscar paciente por ID, Nombre, Edad, Genero...">
+            <div class="input-group-append">
+                <!-- Opcional: puedes agregar un botón de búsqueda aquí -->
+            </div>
+        </div>
+    </div>
+    <div id="pacientes-list"></div>
+
+    <!-- Modal de Confirmación de Eliminación -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Confirmar Eliminación</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ¿Está seguro de que desea eliminar este expediente?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteButton">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para mostrar detalles del paciente -->
+    <div class="modal fade" id="detallesModal" tabindex="-1" role="dialog" aria-labelledby="detallesModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detallesModalLabel">Detalles del Paciente</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modal-body-content">
+                    <!-- Contenido dinámico irá aquí -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="/med-js/med-verpacientes.js"></script>
+    <script type="module" src="/js/firebaseconect.js"></script>
+    <script type="module">
+        import { ManageAccount } from '/js/firebaseconect.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const manageAccount = new ManageAccount();
+            const logoutButton = document.getElementById('logoutButton');
+            
+            if (logoutButton) {
+                logoutButton.addEventListener('click', () => {
+                    manageAccount.signOut();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

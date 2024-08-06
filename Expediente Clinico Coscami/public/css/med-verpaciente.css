@@ -1,0 +1,263 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f4f8; /* Color de fondo más claro */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.notification {
+    display: flex;
+    flex-direction: column;
+    isolation: isolate;
+    position: relative;
+    width: 100%;
+    height: auto;
+    background: #ffffff; /* Fondo blanco para contraste */
+    border-radius: 0.75rem; /* Bordes más redondeados */
+    overflow: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px; /* Tamaño de fuente más pequeño */
+    --gradient: linear-gradient(to bottom, #6a1b9a, #8e24aa, #ab47bc); /* Gradiente púrpura */
+    --color: #6a1b9a; /* Color púrpura */
+    margin-bottom: 1rem;
+}
+
+.notification:before {
+    position: absolute;
+    content: "";
+    border-radius: none;
+    background: #f9f9f9; /* Fondo muy claro */
+    z-index: 2;
+}
+
+.notification:after {
+    position: absolute;
+    content: "";
+    width: 0.3rem; /* Ancho mayor para mayor visibilidad */
+    inset: 0.75rem auto 0.75rem 0.5rem;
+    border-radius: 0.125rem;
+    background: var(--gradient);
+    transition: transform 300ms ease;
+    z-index: 4;
+}
+
+.notification:hover:after {
+    transform: translateX(0.2rem);
+}
+
+.notititle {
+    color: var(--color);
+    padding: 0.75rem 0.5rem 0.5rem 1.5rem; /* Espaciado ajustado */
+    font-weight: 600;
+    font-size: 1.2rem; /* Tamaño de fuente mayor */
+    transition: transform 300ms ease;
+    z-index: 5;
+}
+
+.notification:hover .notititle {
+    transform: translateX(0.2rem);
+}
+
+.notibody {
+    color: #444444; /* Gris oscuro */
+    padding: 0 1.5rem;
+    transition: transform 300ms ease;
+    z-index: 5;
+}
+
+.notification:hover .notibody {
+    transform: translateX(0.3rem);
+}
+
+.notifooter {
+    color: #444444; /* Gris oscuro */
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 300ms ease;
+    z-index: 5;
+}
+
+.notiglow,
+.notiborderglow {
+    position: absolute;
+    width: 22rem; /* Tamaño mayor para mayor efecto */
+    height: 22rem;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle closest-side at center, rgba(255, 255, 255, 0.3), transparent);
+    opacity: 0;
+    transition: opacity 300ms ease;
+}
+
+.notiglow {
+    z-index: 3;
+}
+
+.notiborderglow {
+    z-index: 1;
+}
+
+.notification:hover .notiglow {
+    opacity: 0.15;
+}
+
+.notification:hover .notiborderglow {
+    opacity: 0.15;
+}
+
+.note {
+    color: var(--color);
+    position: fixed;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 1rem; /* Tamaño de fuente ajustado */
+    width: 70%;
+}
+
+.modal-notification {
+    background: #f9f9f9; /* Fondo muy claro */
+    border-radius: 1rem;
+    padding: 2rem; /* Mayor padding para espacio */
+    overflow: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    color: #444444; /* Gris oscuro */
+}
+
+.modal-notititle {
+    color: #6a1b9a; /* Púrpura más oscuro */
+    padding: 1rem 0.5rem;
+    font-weight: 700; /* Fuente más gruesa */
+    font-size: 1.4rem; /* Tamaño de fuente mayor */
+}
+
+.modal-notibody {
+    color: #444444; /* Gris oscuro */
+    padding: 0 1.5rem;
+    margin-bottom: 2rem; /* Espacio adicional en la parte inferior */
+}
+
+.modal-notifooter {
+    color: #444444; /* Gris oscuro */
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.modal-wide {
+    max-width: 85%; /* Ancho máximo ajustado */
+}
+
+.modal-content {
+    border-radius: 1rem;
+    background-color: #fff;
+    color: #444444; /* Gris oscuro */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.modal-header, .modal-footer {
+    border: none;
+}
+
+.modal-body {
+    padding: 2.5rem; /* Mayor padding para espacio */
+}
+
+.modal-title {
+    color: #6a1b9a; /* Púrpura más oscuro */
+    font-weight: 700; /* Fuente más gruesa */
+    font-size: 1.8rem; /* Tamaño de fuente mayor */
+}
+
+.section-title {
+    color: #6a1b9a; /* Púrpura más oscuro */
+    margin-top: 2rem; /* Mayor margen superior */
+    font-weight: 700; /* Fuente más gruesa */
+    font-size: 1.5rem; /* Tamaño de fuente mayor */
+}
+
+.section-content {
+    margin-bottom: 3rem; /* Mayor margen inferior */
+}
+
+.section-content p {
+    margin-bottom: 1rem; /* Mayor margen inferior en los párrafos */
+}
+
+.patient-id {
+    background-color: #333333; /* Fondo más oscuro */
+    color: #ffffff; /* Texto blanco */
+    padding: 0.25rem 0.6rem; /* Ajuste en el espaciado */
+    border-radius: 0.3rem; /* Bordes más redondeados */
+    font-family: monospace;
+    display: inline-block;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px; /* Ajustar al tamaño máximo */
+    margin: 0 auto; /* Centrar el contenedor */
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    border-radius: 1rem; /* Borde redondeado */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra para efecto de elevación */
+    overflow: hidden;
+}
+
+.form-control {
+    border: none; /* Sin borde */
+    padding: 0.75rem 1rem; /* Espaciado interno */
+    font-size: 1rem; /* Tamaño de fuente */
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+.form-control:focus {
+    outline: none; /* Sin borde de enfoque */
+    box-shadow: none; /* Sin sombra de enfoque */
+}
+
+.input-group-append .btn {
+    background-color: #673ab7; /* Color de fondo del botón púrpura */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    padding: 0.75rem 1.5rem; /* Espaciado interno */
+    font-size: 1rem; /* Tamaño de fuente */
+    border-top-right-radius: 1rem; /* Borde superior derecho redondeado */
+    border-bottom-right-radius: 1rem; /* Borde inferior derecho redondeado */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.input-group-append .btn:hover {
+    background-color: #5e35b1; /* Color de fondo del botón al pasar el cursor */
+}
+
+/* Ajustes de diseño para dispositivos móviles */
+@media (max-width: 576px) {
+    .input-group {
+        flex-direction: column;
+        border-radius: 0.5rem;
+    }
+
+    .form-control,
+    .input-group-append .btn {
+        border-radius: 0;
+    }
+
+    .input-group-append {
+        width: 100%;
+    }
+
+    .input-group-append .btn {
+        width: 100%;
+        border-radius: 0 0 0.5rem 0.5rem;
+    }
+}
+
+.name {
+    font-size: 1rem;
+}

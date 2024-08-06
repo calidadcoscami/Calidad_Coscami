@@ -1,0 +1,48 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+h1 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+/*-------------------0*/
+#dashboard {
+    padding: 20px;
+}
+
+.statistics-card {
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0); /* Por defecto, un fondo gris claro */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #333;
+}
+
+.statistics-card h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.statistics-card p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.total-patients {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Fondo degradado para Total de Pacientes */
+}
+
+.total-male {
+    background: linear-gradient(135deg, #00c6ff, #0072ff); /* Fondo degradado para Total Masculino */
+}
+
+.total-female {
+    background: linear-gradient(135deg, #fbc2eb, #a6c0fe); /* Fondo degradado para Total Femenino */
+}

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/img/logo2.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/formulario.css">
+    <title>Expediente Clínico</title>
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <header></header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4"></nav>
+
+    <div class="container">
+        <h1>AGREGAR PACIENTES</h1>
+        <form id="expedienteform" autocomplete="off">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                        <label for="fechaRegistro">Fecha de Registro:</label>
+                        <input type="date" class="form-control" id="fechaRegistro" name="fechaRegistro">
+                    </div>
+                    <h4>Hoja Frontal</h4>
+                    <div class="small-break"></div>
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos:</label>
+                        <input type="text" class="form-control" id="apellidos" name="apellidos">
+                    </div>
+                    <div class="form-group">
+                        <label for="edad">Edad:</label>
+                        <input type="number" class="form-control" id="edad" name="edad">
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                        <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento">
+                    </div>
+                    <div class="form-group">
+                        <label for="genero">Género:</label>
+                        <select id="genero" name="genero" class="form-control" required>
+                            <option value="masculino">Masculino</option>
+                            <option value="femenino">Femenino</option>
+                        </select><br><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Dirección:</label>
+                        <input type="text" class="form-control" id="direccion" name="direccion">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" class="form-control" id="telefono" name="telefono">
+                    </div>
+                    <div class="form-group">
+                        <label for="grupoetnico">Grupo Étnico:</label>
+                        <input type="text" class="form-control" id="grupoetnico" name="grupoetnico">
+                    </div>
+                    <h4>Historia Clínica</h4>
+                    <div class="small-break"></div>
+                    <div class="form-group">
+                        <label for="antecedentesheredofamiliares">Antecedentes Heredo Familiares:</label>
+                        <textarea class="form-control" id="antecedentesheredofamiliares" name="antecedentesheredofamiliares"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="antecedentespersonales">Antecedentes Personales:</label>
+                        <textarea class="form-control" id="antecedentespersonales" name="antecedentespersonales"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="padecimientoactual">Padecimiento Actual:</label>
+                        <textarea class="form-control" id="padecimientoactual" name="padecimientoactual"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="interrogatorioaparatos">Interrogatorio Aparatos:</label>
+                        <textarea class="form-control" id="interrogatorioaparatos" name="interrogatorioaparatos"></textarea>
+                    </div>
+                    <h4>Exploración Física</h4>
+                    <div class="small-break"></div>
+                    <div class="form-group">
+                        <label for="habitus">Habitus:</label>
+                        <textarea class="form-control" id="habitus" name="habitus"></textarea>
+                    </div>
+                    <label>Signo Vitales</label>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="FC">FC:</label>
+                            <input type="text" class="form-control" id="FC" name="FC">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="TA">TA:</label>
+                            <input type="text" class="form-control" id="TA" name="TA">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="FR">FR:</label>
+                            <input type="text" class="form-control" id="FR" name="FR">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="T">T:</label>
+                            <input type="text" class="form-control" id="T" name="T">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="peso">Peso:</label>
+                            <input type="text" class="form-control" id="peso" name="peso">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="talla">Talla:</label>
+                            <input type="text" class="form-control" id="talla" name="talla">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="datoscabeza">Datos Cabeza:</label>
+                        <textarea type="text" class="form-control" id="datoscabeza" name="datoscabeza"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="datoscuello">Datos Cuello:</label>
+                        <textarea type="text" class="form-control" id="datoscuello" name="datoscuello"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="datostorax">Datos Torax:</label>
+                        <textarea type="text" class="form-control" id="datostorax" name="datostorax"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="datosabdomen">Datos Abdomen:</label>
+                        <textarea type="text" class="form-control" id="datosabdomen" name="datosabdomen"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="datosmiembros">Datos Miembros:</label>
+                        <textarea type="text" class="form-control" id="datosmiembros" name="datosmiembros"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="datosgenitales">Datos Genitales:</label>
+                        <textarea type="text" class="form-control" id="datosgenitales" name="datosgenitales"></textarea>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6">
+                   
+                    <h4>Estudios y Diagnóstico</h4>  
+                    <div class="small-break"></div>
+                    <div class="form-group">
+                        <label for="resultadosestudios">Resultados Estudios:</label>
+                        <textarea class="form-control" id="resultadosestudios" name="resultadosestudios"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="diagnosticos">Diagnósticos:</label>
+                        <textarea class="form-control" id="diagnosticos" name="diagnosticos"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="pronostico">Pronóstico:</label>
+                        <textarea class="form-control" id="pronostico" name="pronostico"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="indicacionterapeutica">Indicación Terapéutica:</label>
+                        <textarea class="form-control" id="indicacionterapeutica" name="indicacionterapeutica"></textarea>
+                    </div>
+                    <h4>Nota de Interconsulta</h4>  
+                    <div class="small-break"></div>
+                    <div class="form-group">
+                        <label for="evolucion">Evolución:</label>
+                        <textarea class="form-control" id="evolucion" name="evolucion"></textarea>
+                    </div>
+                  
+                    <div class="form-group">
+                        <label for="resultadosrelevantes">Resultados Relevantes:</label>
+                        <textarea class="form-control" id="resultadosrelevantes" name="resultadosrelevantes"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="tratamientoindicaciones">Tratamiento e Indicaciones Médicas:</label>
+                        <textarea class="form-control" id="tratamientoindicaciones" name="tratamientoindicaciones"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="criteriosdiagnosticos">Criterios Diagnósticos:</label>
+                        <textarea class="form-control" id="criteriosdiagnosticos" name="criteriosdiagnosticos"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="planestudios">Plan Estudios:</label>
+                        <textarea class="form-control" id="planestudios" name="planestudios"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="sugerenciasdiagnosticas">Sugerencias Diagnosticas:</label>
+                        <textarea class="form-control" id="sugerenciasdiagnosticas" name="sugerenciasdiagnosticas"></textarea>
+                    </div>
+                    <h4>Nota Médica en Urgencias</h4>  
+                    <div class="small-break"></div>
+                    <div class="form-group">
+                        <label for="motivoadmision">Motivo de Admisión:</label>
+                        <textarea class="form-control" id="motivoadmision" name="motivoadmision"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="motivoatencion">Motivo de Atención:</label>
+                        <textarea class="form-control" id="motivoatencion" name="motivoatencion"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="resumeninterrogatorio">Resumen del Interrogatorio:</label>
+                        <textarea class="form-control" id="resumeninterrogatorio" name="resumeninterrogatorio"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="resultadosrelevantesurgencias">Resultados Relevantes de Urgencias:</label>
+                        <textarea class="form-control" id="resultadosrelevantesurgencias" name="resultadosrelevantesurgencias"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="diagnosticosurgencias">Diagnósticos de Urgencias:</label>
+                        <textarea class="form-control" id="diagnosticosurgencias" name="diagnosticosurgencias"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="tratamientopronostico">Tratamiento y Pronóstico:</label>
+                        <textarea class="form-control" id="tratamientopronostico" name="tratamientopronostico"></textarea>
+                    </div>
+                    
+                    <h4>Subir Archivos PDF</h4>
+                    <div class="small-break"></div>
+                    <div class="form-group">
+                        <label for="pdfFile">Subir archivos PDF:</label>
+                        <input type="file" class="form-control-file" id="pdfFile" name="pdfFile" accept="application/pdf" multiple>
+                    </div>
+                </div>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="button">Guardar Expediente</button>
+            </div>
+        </form>
+    </div>
+    <footer></footer>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
+    <script type="module">
+        // Your web app's Firebase configuration
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getFirestore, collection, addDoc } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
+        import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCqoq1zbuq98xeIHhXsiH8fFrX5284fit4",
+  authDomain: "coscami-e5d4e.firebaseapp.com",
+  projectId: "coscami-e5d4e",
+  storageBucket: "coscami-e5d4e.appspot.com",
+  messagingSenderId: "977345084580",
+  appId: "1:977345084580:web:afe64cab0aa16462297a31"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const storage = getStorage(app);
+
+        const createExpediente = (expedienteData, pdfUrls) => {
+            return addDoc(collection(db, 'expediente'), {
+                ...expedienteData,
+                pdfUrls // Almacenar las URLs de los PDFs en un array
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const expedienteForm = document.getElementById('expedienteform');
+
+            expedienteForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const formData = new FormData(expedienteForm);
+                const data = {};
+                formData.forEach((value, key) => {
+                    if (key !== 'pdfFile') {
+                        data[key] = value;
+                    }
+                });
+
+                const pdfFiles = expedienteForm['pdfFile'].files;
+                const pdfUrls = [];
+
+                if (pdfFiles.length > 0) {
+                    try {
+                        for (let i = 0; i < pdfFiles.length; i++) {
+                            const pdfFile = pdfFiles[i];
+                            const pdfRef = ref(storage, 'pdfs/' + pdfFile.name);
+                            const snapshot = await uploadBytes(pdfRef, pdfFile);
+                            const pdfUrl = await getDownloadURL(snapshot.ref);
+                            pdfUrls.push(pdfUrl);
+                        }
+                        await createExpediente(data, pdfUrls);
+                        Swal.fire('Expediente guardado con éxito', '', 'success');
+                        expedienteForm.reset();
+                    } catch (error) {
+                        console.error('Error guardando el expediente: ', error);
+                        Swal.fire('Hubo un error guardando el expediente', '', 'error');
+                    }
+                } else {
+                    try {
+                        await createExpediente(data, []);
+                        Swal.fire('Expediente guardado con éxito sin archivos PDF', '', 'success');
+                        expedienteForm.reset();
+                    } catch (error) {
+                        console.error('Error guardando el expediente: ', error);
+                        Swal.fire('Hubo un error guardando el expediente', '', 'error');
+                    }
+                }
+            });
+        });
+       
+    </script>
+    <script type="module">
+        import { ManageAccount } from '/js/firebaseconect.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const manageAccount = new ManageAccount();
+            const logoutButton = document.getElementById('logoutButton');
+
+            logoutButton.addEventListener('click', () => {
+                manageAccount.signOut();
+            });
+        });
+    </script>
+    <script src="/js/scripts.js"></script>
+</body>
+</html>

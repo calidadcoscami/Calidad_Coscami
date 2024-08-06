@@ -1,0 +1,136 @@
+body, h1, h2, h3, h4, h5, h6, p, div, label, input, textarea, select, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos básicos del cuerpo */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 90%; /* Ajusta este valor según tus necesidades */
+    margin-top: 50px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado del formulario */
+h2 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+/* Estilos del formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Estilos de etiquetas y campos de entrada */
+label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #007bff;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #333;
+    background: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #007bff;
+    background: #fff;
+}
+/* Estilos de botones */
+.button {
+    display: inline-block; /* Para que el enlace se comporte como un botón */
+    padding: 1.3em 3em;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    text-align: center; /* Centrar el texto dentro del botón */
+    text-decoration: none; /* Quitar el subrayado del enlace */
+    max-width: 200px; /* Limitar el ancho máximo del botón */
+    width: auto; /* Ajustar el ancho al contenido */
+}
+
+.button:hover {
+    background-color: #0056b3;
+    box-shadow: 0px 15px 20px rgba(71, 167, 252, 0.4);
+    transform: translateY(-7px);
+}
+
+.button:active {
+    transform: translateY(-1px);
+}
+
+/* Estilo específico para el botón de cancelar */
+.button.cancel {
+    background-color: #b3b3b3; /* Color de fondo inicial */
+}
+
+.button.cancel:hover {
+    background-color: #ff0000;
+    box-shadow: 0px 15px 20px rgba(254, 57, 57, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.button.cancel:active {
+    transform: translateY(-1px);
+}
+
+/* Centrar los botones dentro de su contenedor */
+.button-container {
+    text-align: center;
+    margin: 20px 0; /* Espaciado superior e inferior opcional */
+}
+
+/* Estilos de grupos de formulario */
+.form-group {
+display: flex;
+flex-direction: column;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+margin-top: 5px;
+}
+
+h4 {
+    color: #003366; /* Azul oscuro */
+    font-weight: bold;
+    border-bottom: 2px solid #003366; /* Línea debajo */
+    padding-bottom: 5px;
+}
+.small-break {
+    margin-bottom: 10px; /* Ajusta este valor para el espaciado deseado */
+}

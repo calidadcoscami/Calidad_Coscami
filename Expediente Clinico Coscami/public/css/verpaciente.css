@@ -1,0 +1,253 @@
+.notification {
+    display: flex;
+    flex-direction: column;
+    isolation: isolate;
+    position: relative;
+    width: 100%; /* Cambiado a 100% para adaptarse al contenedor */
+    height: auto; /* Cambiado a auto para ajustar la altura al contenido */
+    background: #efefef;
+    border-radius: 1rem;
+    overflow: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    --gradient: linear-gradient(to bottom, #007BFF, #0056b3, #004080); /* Tono de azul más oscuro */
+    --color: #0056b3; /* Tono de azul más oscuro */
+    margin-bottom: 1rem; /* Agregado para separar las tarjetas */
+}
+
+.notification:before {
+    position: absolute;
+    content: "";
+    border-radius: none;
+    background: #fcfcfc;
+    z-index: 2;
+}
+
+.notification:after {
+    position: absolute;
+    content: "";
+    width: 0.25rem;
+    inset: 0.65rem auto 0.65rem 0.5rem;
+    border-radius: 0.125rem;
+    background: var(--gradient);
+    transition: transform 300ms ease;
+    z-index: 4;
+}
+
+.notification:hover:after {
+    transform: translateX(0.15rem);
+}
+
+.notititle {
+    color: var(--color);
+    padding: 0.65rem 0.25rem 0.4rem 1.25rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: transform 300ms ease;
+    z-index: 5;
+}
+
+.notification:hover .notititle {
+    transform: translateX(0.15rem);
+}
+
+.notibody {
+    color: #333333; /* Cambiado a un gris más oscuro para mejor legibilidad */
+    padding: 0 1.25rem;
+    transition: transform 300ms ease;
+    z-index: 5;
+}
+
+.notification:hover .notibody {
+    transform: translateX(0.25rem);
+}
+
+.notifooter {
+    color: #333333; /* Cambiado a un gris más oscuro para mejor legibilidad */
+    padding: 1.25rem;
+    text-align: center; /* Centrando el contenido */
+    transition: transform 300ms ease;
+    z-index: 5;
+}
+
+.notiglow,
+.notiborderglow {
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle closest-side at center, white, transparent);
+    opacity: 0;
+    transition: opacity 300ms ease;
+}
+
+.notiglow {
+    z-index: 3;
+}
+
+.notiborderglow {
+    z-index: 1;
+}
+
+.notification:hover .notiglow {
+    opacity: 0.1;
+}
+
+.notification:hover .notiborderglow {
+    opacity: 0.1;
+}
+
+.note {
+    color: var(--color);
+    position: fixed;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 0.9rem;
+    width: 75%;
+}
+
+.modal-notification {
+  background: #ffffff; /* Fondo blanco para mayor contraste */
+  border-radius: 1rem;
+  padding: 1.5rem; /* Aumentar padding para mayor espacio */
+  overflow: hidden;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px; /* Aumentar tamaño de fuente */
+  color: #333333; /* Texto más oscuro */
+}
+
+.modal-notititle {
+  color: #0056b3; /* Tono de azul más oscuro */
+  padding: 0.75rem 0.25rem 0.5rem 0.25rem;
+  font-weight: 600;
+  font-size: 1.3rem; /* Aumentar tamaño de título */
+}
+
+.modal-notibody {
+  color: #333333; /* Texto más oscuro */
+  padding: 0 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-notifooter {
+    color: #333333; /* Cambiado a un gris más oscuro para mejor legibilidad */
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.modal-wide {
+    max-width: 90%;
+}
+
+.modal-content {
+    border-radius: 1rem;
+    background-color: #fff;
+    color: #333333; /* Cambiado a un gris más oscuro para mejor legibilidad */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.modal-header, .modal-footer {
+    border: none;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-title {
+    color: #0056b3; /* Tono de azul más oscuro */
+    font-weight: 600;
+    font-size: 1.7rem;
+}
+
+.section-title {
+    color: #0056b3; /* Tono de azul más oscuro */
+    margin-top: 1.5rem;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.section-content {
+    margin-bottom: 2.5rem;
+}
+
+.section-content p {
+    margin-bottom: 0.75rem;
+}
+
+.patient-id {
+    background-color: #444444; /* Fondo más oscuro para mejor contraste */
+    color: #ffffff; /* Texto blanco para mejor legibilidad */
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+    font-family: monospace;
+    display: inline-block;
+}
+.container {
+      width: 100%;
+      max-width: 600px; /* Ajustar al tamaño máximo */
+      margin: 0 auto; /* Centrar el contenedor */
+  }
+
+  .input-group {
+      display: flex;
+      align-items: center;
+      border-radius: 1rem; /* Borde redondeado */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efecto de elevación */
+      overflow: hidden;
+  }
+
+  .form-control {
+      border: none; /* Sin borde */
+      padding: 0.75rem 1rem; /* Espaciado interno */
+      font-size: 1rem; /* Tamaño de fuente */
+      border-top-left-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+  }
+
+  .form-control:focus {
+      outline: none; /* Sin borde de enfoque */
+      box-shadow: none; /* Sin sombra de enfoque */
+  }
+
+  .input-group-append .btn {
+      background-color: #007BFF; /* Color de fondo del botón */
+      color: white; /* Color del texto del botón */
+      border: none; /* Sin borde */
+      padding: 0.75rem 1.5rem; /* Espaciado interno */
+      font-size: 1rem; /* Tamaño de fuente */
+      border-top-right-radius: 1rem; /* Borde superior derecho redondeado */
+      border-bottom-right-radius: 1rem; /* Borde inferior derecho redondeado */
+      transition: background-color 0.3s ease; /* Transición suave */
+  }
+
+  .input-group-append .btn:hover {
+      background-color: #0056b3; /* Color de fondo del botón al pasar el cursor */
+  }
+
+  /* Ajustes de diseño para dispositivos móviles */
+  @media (max-width: 576px) {
+      .input-group {
+          flex-direction: column;
+          border-radius: 0.5rem;
+      }
+
+      .form-control,
+      .input-group-append .btn {
+          border-radius: 0;
+      }
+
+      .input-group-append {
+          width: 100%;
+      }
+
+      .input-group-append .btn {
+          width: 100%;
+          border-radius: 0 0 0.5rem 0.5rem;
+      }
+  }
+  name{
+    font-size: 1rem; 
+  }

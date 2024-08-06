@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Paciente</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/editar.css">
+    <style>
+        /* Estilos de botones */
+        .button {
+            display: inline-block;
+            padding: 1.3em 3em;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: 500;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 45px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease 0s;
+            cursor: pointer;
+            outline: none;
+            text-align: center;
+            text-decoration: none;
+            max-width: 200px;
+            width: auto;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+            box-shadow: 0px 15px 20px rgba(71, 167, 252, 0.4);
+            transform: translateY(-7px);
+        }
+
+        .button:active {
+            transform: translateY(-1px);
+        }
+
+        /* Estilo específico para el botón de cancelar */
+        .button.cancel {
+            background-color: #b3b3b3;
+        }
+
+        .button.cancel:hover {
+            background-color: #ff0000;
+            box-shadow: 0px 15px 20px rgba(254, 57, 57, 0.4);
+            color: #fff;
+            transform: translateY(-7px);
+        }
+
+        .button.cancel:active {
+            transform: translateY(-1px);
+        }
+
+        /* Centrar los botones dentro de su contenedor */
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-group">
+            <label for="fechaRegistro">Fecha de Registro:</label>
+            <input type="date" class="form-control" id="fechaRegistro" name="fechaRegistro" disabled>
+        </div>
+        <h2>Editar Paciente</h2>
+        <form id="editarPacienteForm">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h4>Hoja Frontal</h4>
+                    <div class="small-break"></div>
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos:</label>
+                        <input type="text" class="form-control" id="apellidos" name="apellidos">
+                    </div>
+                    <div class="form-group">
+                        <label for="edad">Edad:</label>
+                        <input type="number" class="form-control" id="edad" name="edad">
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                        <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento">
+                    </div>
+                    <div class="form-group">
+                        <label for="genero">Género:</label>
+                        <input type="text" class="form-control" id="genero" name="genero">
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Dirección:</label>
+                        <input type="text" class="form-control" id="direccion" name="direccion">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" class="form-control" id="telefono" name="telefono">
+                    </div>
+                    <div class="form-group">
+                        <label for="grupoetnico">Grupo Étnico:</label>
+                        <input type="text" class="form-control" id="grupoetnico" name="grupoetnico">
+                    </div>
+                    <h4>Historia Clínica</h4>
+                    <div class="small-break"></div>
+                    <div class="form-group">
+                        <label for="antecedentesheredofamiliares">Antecedentes Heredo Familiares:</label>
+                        <textarea class="form-control" id="antecedentesheredofamiliares" name="antecedentesheredofamiliares"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="antecedentespersonales">Antecedentes Personales:</label>
+                        <textarea class="form-control" id="antecedentespersonales" name="antecedentespersonales"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="padecimientoactual">Padecimiento Actual:</label>
+                        <textarea class="form-control" id="padecimientoactual" name="padecimientoactual"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="interrogatorioaparatos">Interrogatorio Aparatos:</label>
+                        <textarea class="form-control" id="interrogatorioaparatos" name="interrogatorioaparatos"></textarea>
+                    </div>
+                    <h4>Exploración Física</h4>
+                    <div class="small-break"></div>
+                    <div class="form-group">
+                        <label for="habitus">Habitus:</label>
+                        <textarea class="form-control" id="habitus" name="habitus"></textarea>
+                    </div>
+                    <label>Signo Vitales</label>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="FC">FC:</label>
+                            <input type="text" class="form-control" id="FC" name="FC">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="TA">TA:</label>
+                            <input type="text" class="form-control" id="TA" name="TA">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="FR">FR:</label>
+                            <input type="text" class="form-control" id="FR" name="FR">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="T">T:</label>
+                            <input type="text" class="form-control" id="T" name="T">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="peso">Peso:</label>
+                            <input type="text" class="form-control" id="peso" name="peso">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="talla">Talla:</label>
+                            <input type="text" class="form-control" id="talla" name="talla">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="datoscabeza">Datos Cabeza:</label>
+                        <textarea type="text" class="form-control" id="datoscabeza" name="datoscabeza"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="datoscuello">Datos Cuello:</label>
+                        <textarea type="text" class="form-control" id="datoscuello" name="datoscuello"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="datostorax">Datos Torax:</label>
+                        <textarea type="text" class="form-control" id="datostorax" name="datostorax"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="datosabdomen">Datos Abdomen:</label>
+                        <textarea type="text" class="form-control" id="datosabdomen" name="datosabdomen"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="datosmiembros">Datos Miembros:</label>
+                        <textarea type="text" class="form-control" id="datosmiembros" name="datosmiembros"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="datosgenitales">Datos Genitales:</label>
+                        <textarea type="text" class="form-control" id="datosgenitales" name="datosgenitales"></textarea>
+                    </div>
+                    <h4>Subir Archivos PDF</h4>
+                    <div class="small-break"></div>
+                    <div class="form-group">
+                        <label for="pdfFile">Subir archivos PDF:</label>
+                        <input type="file" class="form-control-file" id="pdfFile" name="pdfFile" accept="application/pdf" multiple>
+                        <button type="button" id="removePdfButton" class="btn btn-danger mt-2">Quitar todos los archivos PDF</button>
+                        <p id="currentPdf" class="mt-2"></p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <h4>Estudios y Diagnóstico</h4>  
+                    <div class="small-break"></div>
+                    <div class="form-group">
+                        <label for="resultadosestudios">Resultados Estudios:</label>
+                        <textarea class="form-control" id="resultadosestudios" name="resultadosestudios"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="diagnosticos">Diagnósticos:</label>
+                        <textarea class="form-control" id="diagnosticos" name="diagnosticos"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="pronostico">Pronóstico:</label>
+                        <textarea class="form-control" id="pronostico" name="pronostico"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="indicacionterapeutica">Indicación Terapéutica:</label>
+                        <textarea class="form-control" id="indicacionterapeutica" name="indicacionterapeutica"></textarea>
+                    </div>
+                    <h4>Nota de Interconsulta</h4>  
+                    <div class="small-break"></div>
+                    <div class="form-group">
+                        <label for="evolucion">Evolución:</label>
+                        <textarea class="form-control" id="evolucion" name="evolucion"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="resultadosrelevantes">Resultados Relevantes:</label>
+                        <textarea class="form-control" id="resultadosrelevantes" name="resultadosrelevantes"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="tratamientoindicaciones">Tratamiento e Indicaciones Médicas:</label>
+                        <textarea class="form-control" id="tratamientoindicaciones" name="tratamientoindicaciones"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="criteriosdiagnosticos">Criterios Diagnósticos:</label>
+                        <textarea class="form-control" id="criteriosdiagnosticos" name="criteriosdiagnosticos"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="planestudios">Plan Estudios:</label>
+                        <textarea class="form-control" id="planestudios" name="planestudios"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="sugerenciasdiagnosticas">Sugerencias Diagnosticas:</label>
+                        <textarea class="form-control" id="sugerenciasdiagnosticas" name="sugerenciasdiagnosticas"></textarea>
+                    </div>
+                    <h4>Nota Médica en Urgencias</h4>  
+                    <div class="small-break"></div>
+                    <div class="form-group">
+                        <label for="motivoadmision">Motivo de Admisión:</label>
+                        <textarea type="text" class="form-control" id="motivoadmision" name="motivoadmision"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="motivoatencion">Motivo de Atención:</label>
+                        <textarea type="text" class="form-control" id="motivoatencion" name="motivoatencion"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="resumeninterrogatorio">Resumen del Interrogatorio:</label>
+                        <textarea type="text" class="form-control" id="resumeninterrogatorio" name="resumeninterrogatorio"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="resultadosrelevantesurgencias">Resultados Relevantes de Urgencias:</label>
+                        <textarea type="text" class="form-control" id="resultadosrelevantesurgencias" name="resultadosrelevantesurgencias"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="diagnosticosurgencias">Diagnósticos de Urgencias:</label>
+                        <textarea type="text" class="form-control" id="diagnosticosurgencias" name="diagnosticosurgencias"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="tratamientopronostico">Tratamiento y Pronóstico:</label>
+                        <textarea type="text" class="form-control" id="tratamientopronostico" name="tratamientopronostico"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="button">Actualizar</button>
+                <a href="/html/verpacientes.html" class="button cancel">Cancelar</a>
+            </div>
+        </form>
+    </div>
+    <script type="module" src="/js/firebaseconect.js"></script>
+    <script type="module" src="/js/editarpaciente.js"></script>
+</body>
+</html>

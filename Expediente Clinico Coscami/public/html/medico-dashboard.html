@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Médico - Coscami</title>
+    <link rel="shortcut icon" href="/img/logo2.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/navbar.css"/>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <script type="module" src="/js/firebaseconect.js"></script>
+    <script type="module" src="/med-js/medico.js" defer></script>
+    <style>
+        body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f4f8; /* Color de fondo más claro */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card-container {
+    margin: 20px 0;
+}
+
+.chart-container {
+    height: 300px;
+}
+
+.statistics-card {
+    background-color: #ffffff;
+    border: 1px solid #bbdefb;
+    border-radius: 0.5rem;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.statistics-card h4 {
+    margin-bottom: 15px;
+    color: #1e88e5;
+}
+
+.charts-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.chart-wrapper {
+    flex: 1;
+    padding: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="navbar-container">
+        <div class="logo">
+            <a href="#">
+                <img src="/img/logo.png" alt="Centro Medico Coscami">
+            </a>
+        </div>
+        <div id="nav">
+            <a href="medico-dashboard.html"><i class="nav-icon fas fa-home"></i> Home</a>
+            <a href="med-verpacientes.html"><i class="nav-icon fas fa-list-alt"></i> Ver pacientes</a>
+            <button type="button" id="logoutButton"><i class="nav-icon fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+        </div>
+      </div>
+      
+    <main class="container">
+        <div class="header-section">
+            <h1 class="display-4">Bienvenido Personal Médico al Expediente Clínico del Hospital Centro Médico Coscami</h1>
+            <p class="lead">Utiliza esta plataforma para gestionar y acceder a los expedientes clínicos de los pacientes de manera eficiente.</p>
+        </div>
+        <!-- DASHBOARD -->
+        <section id="dashboard">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="statistics-card total-patients">
+                        <h4>Total de Pacientes</h4>
+                        <p><span id="totalPatients">0</span></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="statistics-card total-male">
+                        <h4>Total Masculino</h4>
+                        <p><span id="totalMale">0</span></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="statistics-card total-female">
+                        <h4>Total Femenino</h4>
+                        <p><span id="totalFemale">0</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Pacientes Nuevos Esta Semana</h5>
+                        <div class="chart-container">
+                            <canvas id="weeklyChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <!-- Aquí puedes agregar tu pie de página -->
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module">
+        import { ManageAccount } from '/js/firebaseconect.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const manageAccount = new ManageAccount();
+            const logoutButton = document.getElementById('logoutButton');
+
+            if (logoutButton) {
+                logoutButton.addEventListener('click', () => {
+                    manageAccount.signOut();
+                });
+            }
+        });
+    </script>
+   
+</body>
+</html>
